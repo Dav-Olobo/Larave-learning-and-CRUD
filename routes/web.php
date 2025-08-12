@@ -3,6 +3,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
+use App\Http\controllers\PostController;  
 
 Route::get('/', function () {
     return view('home');
@@ -69,3 +70,6 @@ Route::get('/contact', function () {
 Route::post('/contactsubmit', function () {
     return "Contact form submitted successfully!";
 })->name('contactsubmission');
+
+Route::resource('posts',PostController::class); 
+  
